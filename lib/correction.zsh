@@ -7,6 +7,8 @@ alias heroku='nocorrect heroku'
 alias ebuild='nocorrect ebuild'
 alias hpodder='nocorrect hpodder'
 alias sudo='nocorrect sudo'
+alias vim='nocorrect vim'
+alias aptitude='nocorrect aptitude'
 
 if [[ "$ENABLE_CORRECTION" == "true" ]]; then
   setopt correct_all

@@ -15,32 +15,32 @@ hash git >/dev/null 2>&1 && /usr/bin/env git clone https://github.com/davidxia/o
   exit
 }
 
-echo "\033[0;34mLooking for an existing zsh config...\033[0m"
-if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
-  echo "\033[0;33mFound ~/.zshrc.\033[0m \033[0;32mBacking up to ~/.zshrc.pre-oh-my-zsh\033[0m";
+printf "\e[0;34mLooking for an existing zsh config...\e[0m\n"
+if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]
+then
+  printf "\e[0;33mFound ~/.zshrc.\e[0m \e[0;32mBacking up to ~/.zshrc.pre-oh-my-zsh\e[0m\n";
   mv ~/.zshrc ~/.zshrc.pre-oh-my-zsh;
 fi
 
-echo "\033[0;34mUsing the Oh My Zsh template file and adding it to ~/.zshrc\033[0m"
-cp $ZSH/templates/zshrc.zsh-template ~/.zshrc
-sed -i -e "/^ZSH=/ c\\
-ZSH=$ZSH
-" ~/.zshrc
+printf "\e[0;34mUsing the Oh My Zsh template file and adding it to ~/.zshrc\e[0m\n"
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 echo "\033[0;34mCopying your current PATH and adding it to the end of ~/.zshrc for you.\033[0m"
 sed -i -e "/export PATH=/ c\\
 export PATH=\"$PATH\"
 " ~/.zshrc
 
-echo "\033[0;34mTime to change your default shell to zsh!\033[0m"
+printf "\e[0;34mTime to change your default shell to zsh!\e[0m\n"
 chsh -s `which zsh`
 
-echo "\033[0;32m"'         __                                     __   '"\033[0m"
-echo "\033[0;32m"'  ____  / /_     ____ ___  __  __   ____  _____/ /_  '"\033[0m"
-echo "\033[0;32m"' / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \ '"\033[0m"
-echo "\033[0;32m"'/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / / '"\033[0m"
-echo "\033[0;32m"'\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/  '"\033[0m"
-echo "\033[0;32m"'                        /____/                       ....is now installed!'"\033[0m"
+printf "\e[0;32m"'         __                                     __   '"\e[0m\n"
+printf "\e[0;32m"'  ____  / /_     ____ ___  __  __   ____  _____/ /_  '"\e[0m\n"
+printf "\e[0;32m"' / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \ '"\e[0m\n"
+printf "\e[0;32m"'/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / / '"\e[0m\n"
+printf "\e[0;32m"'\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/  '"\e[0m\n"
+printf "\e[0;32m"'                        /____/                       '"\e[0m\n"
+
+echo "\n\n \033[0;32m....is now installed.\033[0m"
 echo "\n\n \033[0;32mPlease look over the ~/.zshrc file to select plugins, themes, and options.\033[0m"
 echo "\n\n \033[0;32mp.s. Follow us at http://twitter.com/ohmyzsh.\033[0m"
 /usr/bin/env zsh

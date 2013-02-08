@@ -6,6 +6,7 @@ custom
 !custom/example.zsh
 !custom/plugins
 !custom/virtualenvwrapper.zsh
+!custom/sshsock.zsh
 *.swp
 !custom/example.zshcache
 cache/

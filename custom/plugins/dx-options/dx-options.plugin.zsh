@@ -41,4 +41,5 @@ BROWSER='chrome'
 LC_ALL='en_US.UTF-8'
 LANG='en_US.UTF-8'
 LC_CTYPE=C
+TMOUT=0
 unsetopt ALL_EXPORT
